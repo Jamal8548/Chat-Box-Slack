@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+ </head>
+
+<body>
+  <button class="button" onclick="openForm()">Open Chat</button>
+
+  <div class="form-popup" id="myForm">
+    <form action="" method="POST" id="obj" class="form-container">
+
+      <h1 style="text-align: center;">Chat Box</h1>
+
+      <input type="text" placeholder="Enter your message" name="message" id="messageText" required>
+
+      <button type="submit" class="btn" onclick="sendMessage()">Send</button>
+
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("obj").addEventListener("click", function (event) {
+      event.preventDefault()
+    });
+
+    function sendMessage() {
+
+      const messageText = document.getElementById("messageText").value;
+
+      var xhr = new XMLHttpRequest();
+
+      xhr.open('POST', 'https://hooks.slack.com/services/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', true);
+
+      xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+      xhr.onload = function () {
+        alert("Response: " + this.responseText);
+        document.getElementById("messageText").value = '';
+      };
+
+      xhr.send(JSON.stringify({
+        "text": messageText
+      }));
+
+    }
+
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+  </script>
+
+</body>
+
+</html>
