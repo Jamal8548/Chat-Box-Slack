@@ -1,68 +1,66 @@
- .button {
-      border: none;
-      color: white;
-      padding: 15px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: auto;
-      margin-top: 40px;
-      cursor: pointer;
-      background-color: #4CAF50;
-      display:grid;
-    }
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: auto;
+  margin-top: 40px; /* better writing would be "margin: 40px auto auto;" */
+  cursor: pointer;
+  background-color: #4caf50;
+  display: grid; /* multiple css attributes (display line 7) */
+}
 
-    .form-popup {
-      display: none;
-      position: relative;
-      bottom: 0;
-      right: 15px;
-      border: 3px solid #f1f1f1;
-      z-index: 9;
-      margin:auto;
-      width:26%;
-      border: 3px solid green;
-      padding: 1px;
-      text-align: center;
+.form-popup {
+  display: none;
+  position: relative;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+  margin: auto;
+  width: 26%; /* this is not responsive */
+  border: 3px solid green; /* multiple css attributes (border line 21) */
+  padding: 1px;
+  text-align: center;
+}
 
-    
-    }
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
 
-    .form-container {
-      max-width: 300px;
-      padding: 10px;
-      background-color: white;
-    }
+.form-container input[type='text'] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
 
-    .form-container input[type=text] {
-      width: 100%;
-      padding: 15px;
-      margin: 5px 0 22px 0;
-      border: none;
-      background: #f1f1f1;
-    }
+.form-container input[type='text']:focus {
+  background-color: #ddd;
+  outline: none;
+}
 
-    .form-container input[type=text]:focus {
-      background-color: #ddd;
-      outline: none;
-    }
-     
-    .form-container .btn {
-      border: none;
-      color: white;
-      padding: 15px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: auto;
-      margin-top: 15px;
-      cursor: pointer;
-      background-color: black;
-      display:grid;
-    }
+.form-container .btn {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: auto;
+  margin-top: 15px; /* better writing would be "margin: 15px auto auto;" */
+  cursor: pointer;
+  background-color: black;
+  display: grid; /* multiple css attributes (display line 55) */
+}
 
-    .form-container .btn:hover {
-      opacity: 1;
-   
+.form-container .btn:hover {
+  opacity: 1; /* this is not needed, is it? */
+}
